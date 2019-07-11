@@ -26,8 +26,7 @@ module.exports = {
         800: '#2d3748',
         900: '#1a202c',
         1000: '#F5F5F5',
-        1100: '#4A4A4A',
-        1200: '#9B9B9B'
+        1100: '#4A4A4A'
       },
       red: {
         100: '#fff5f5',
@@ -158,9 +157,7 @@ module.exports = {
       '64': '16rem',
       '84': '19.5rem',
       '94': '20',
-      '128': '32rem',
-      '391': '24.438rem',
-      '1002': '62.625rem'
+      '128': '32rem'
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {

@@ -7,3 +7,10 @@
 .greenbluegradient {
     background: linear-gradient(270deg, #8BDA5A -10.32%, #1435B9 100%);
 }
+
+.greenbluegradienttransparent {
+    background: linear-gradient(270deg, #8BDA5A -10.32%, #1435B9 100%);
+    mix-blend-mode: normal;
+    opacity: 0.3;
+}
+

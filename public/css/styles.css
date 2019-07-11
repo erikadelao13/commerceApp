@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container-max {
+    max-width: 100%;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.tab-content {
+    max-height: 0;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
+/* :checked - resize to full height */
+.tab input:checked ~ .tab-content {
+    max-height: 100vh;
+}
+/* Label formatting when open */
+.tab input:checked + label{
+    /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+    font-size: 1.25rem; /*.text-xl*/
+    padding: 1.25rem; /*.p-5*/
+    border-left-width: 2px; /*.border-l-2*/
+}
+/* Icon */
+.tab label::after {
+    float:right;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+}
+/* Icon formatting - closed */
+.tab input[type=checkbox] + label::before {
+    content: "+";
+    font-weight:bold; /*.font-bold*/
+}
+/* Icon formatting - open */
+.tab input[type=checkbox]:checked + label::before {
+    content: '-';
+    background-color: #0071BB; /*.bg-indigo*/
+}
+.tab input[type=radio]:checked + label::after {
+    transform: rotateX(180deg);
+}
+input[type=text] {
+    border-bottom: 1px solid gainsboro
+}
+
+  
+  /* header */
+  
+  .header {
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+      border-width: medium 0 0 0;
+      border-color: #fff;
+  }
+  
+  
+  
+  /* menu */
+  
+  .header .menu{
+    float: right;
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  /* SETEA UN MAX HEIGHT PARA QUE EL UL SE PUEDA EXPANDIR*/
+  .header .menu-btn:checked ~ .menu {
+    max-height: 100%;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }

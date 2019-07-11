@@ -1,244 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <style>
-         /* Tab content - closed */
-         .tab-content {
-         max-height: 0;
-         -webkit-transition: max-height .35s;
-         -o-transition: max-height .35s;
-         transition: max-height .35s;
-         }
-         /* :checked - resize to full height */
-         .tab input:checked ~ .tab-content {
-         max-height: 100vh;
-         }
-         /* Label formatting when open */
-         .tab input:checked + label{
-         /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
-         font-size: 1.25rem; /*.text-xl*/
-         padding: 1.25rem; /*.p-5*/
-         border-left-width: 2px; /*.border-l-2*/
-         }
-         /* Icon */
-         .tab label::after {
-         float:right;
-         right: 0;
-         top: 0;
-         display: block;
-         width: 1.5em;
-         height: 1.5em;
-         line-height: 1.5;
-         font-size: 1.25rem;
-         text-align: center;
-         -webkit-transition: all .35s;
-         -o-transition: all .35s;
-         transition: all .35s;
-         }
-         /* Icon formatting - closed */
-         .tab input[type=checkbox] + label::before {
-         content: "+";
-         font-weight:bold; /*.font-bold*/
-         }
-         /* Icon formatting - open */
-         .tab input[type=checkbox]:checked + label::before {
-         content: '-';
-         background-color: #0071BB; /*.bg-indigo*/
-         }
-         .tab input[type=radio]:checked + label::after {
-         transform: rotateX(180deg);
-         }
-      </style>    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tap The App</title>
     <link rel="stylesheet" href="./public/css/app.css" />
-    <link rel="stylesheet" href="./public/css/customCss.css" />
+    <link rel="stylesheet" href="./public/css/styles.css" />
     <script src="./public/js/app.js"></script>
   </head>
   <body class="font-sans">
-    <header class='greenbluegradient fixed w-full'>
-    <div class="h-16 mx-4 flex justify-between text-white">
-        <a><img src="./resources/Images/header + Group + ic/Group.png" alt="" class=""></a>
-        <div class="navBarMenu my-4 md:my-0 items-center hidden md:flex menu-items h-full">
+
+    <div class="container-max">
+      <!-- <header class='greenbluegradient fixed w-full'>
+        <div class="h-16  flex justify-between text-white">
+          <a><img src="./resources/Images/header + Group + ic/Group.png" alt="" class=""></a>
+          <div class="navBarMenu my-4 md:my-0 items-center hidden md:flex menu-items h-full">
             <a href="" class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg">Inicio</a>
             <a href="" class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg">Como funciona</a>
-            <a href="./commerce.html" class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg">Comercio</a>
+            <a href="" class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg">Comercio</a>
             <a href="" class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg">Contratanos</a>
-        </div>
-      </div>
-    </header>
-    <section class='greenbluegradient'>
-      <div class='py-8 mx-4 flex items-center'>
-        <img src='./resources/images/Group 93.png' />
-        <div class='ml-6'>
-          <h2 class='font-sans text-6xl font-extrabold text-white'>CommerceApp te ayuda a manejar tus reservas </h2>
-          <p class='font-sans boldfont-semi leading-relaxed text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
-          <div class='flex w-84 mt-8 justify-between'>
-              <img src="./resources/images/badge-appstore.png" alt="" class="">
-              <img src="./resources/images/badge-playstore.png" alt="" class="">                          
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class='bg-blue-1000'>
-      <div class='py-16 mx-4 flex items-center justify-between'>
-        <div class='ml-6 justify-between'>
-          <h2 class='w-84 font-sans text-4xl font-extrabold text-white'>Reserva desde cualquier lugar</h2>
-          <p class='w-128 font-sans boldfont-semi leading-relaxed text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+      </header> -->
+      <header class=" greenbluegradient w-full header">
+          <div class="flex justify-between text-white">
+            <div>
+              <a><img src="./resources/Images/header + Group + ic/Group.png" alt="" class=""></a>
+            </div>
+            <div class="h-auto w-full">
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                  <li><a class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg" href="#work">Inicio</a></li>
+                  <li><a class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg" href="#about">Como funciona</a></li>
+                  <li><a class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg" href="./commerce.html">Comercio</a></li>
+                  <li><a class="link-menu font-semibold leading-relaxed no-underline px-6 text-lg" href="#contact">Contratanos</a></li>
+                </ul>
+            </div>
+          </div>
+        </header>
+      <section class='greenbluegradient md:flex pt-12 h-full lg:h-screen bg-gradient-100 flex flex-col lg:flex-row items-center mx-auto'>
+        <div class='flex flex-col md:flex-row py-8 mx-4 items-center'>
+          <div class='w-full lg:w-2/3 flex flex-col justify-center h-full pt-24 order-1 lg:order-2'>
+            <h2 class='font-sans text-4xl text-center md:text-left md:text-6xl font-extrabold text-white'>CommerceApp <br/> te ayuda a manejar tus reservas </h2>
+            <p class='font-sans boldfont-semi leading-relaxed text-white text-center md:text-left'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+            <div class='flex mt-8 justify-between md:justify-start'>
+              <img src="./resources/images/badge-appstore.png" alt="" class="">
+              <img src="./resources/images/badge-playstore.png" alt="" class="ml-4">
+            </div>
+          </div>
+          <div class="">
+            <img src='./resources/images/Group 93.png' class="" />
+          </div>
         </div>
-        <img src='./resources/images/Group 22.png' />
-      </div>
-    </section>
+      </section>
 
-    <section class='bg-green-1000'>
-      <div class='py-16 mx-4 flex items-center justify-between'>
-        <div class='justify-between ml-6'>
-          <h2 class='w-94 text-blue-1000 font-sans text-4xl font-extrabold text-white'>Encuentra las mejores promociones</h2>
-          <p class='w-128 font-sans boldfont-semi leading-relaxed text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+      <section class='h-auto py-20 bg-blue-1000 overflow-hidden'>
+        <div class='container mx-auto flex flex-col lg:flex-row items-center py-4'>
+          <div class='w-full lg:w-1/2 text-white flex flex-col justify-center mb-10 lg:mb-0'>
+            <div class="lg:w-5/6">
+              <h3 class='font-sans text-4xl font-extrabold text-white'>Reserva desde cualquier lugar</h3>
+              <br/>
+              <p class='leading-normal font-sans font-semibold text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 h-full">
+            <div class="h-full lg:h-screen flex items-center justify-center">
+              <img src='./resources/images/Group 22.png' />
+            </div>
+          </div>
         </div>
-        <img src='./resources/images/Group 91.png' />
-      </div>
-    </section>
+      </section>
 
-    <section class='bg-blue-1000'>
-      <div class='py-16 mx-4 flex items-center justify-between'>
-        <div class='ml-6 justify-between'>
-          <h2 class='w-84 font-sans text-4xl font-extrabold text-white'>No vuelvas a perder tu cita</h2>
-          <p class='w-128 font-sans boldfont-semi leading-relaxed text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+      <section class='h-auto py-20 overflow-hidden bg-green-1000'>
+        <div class='container mx-auto flex flex-col lg:flex-row items-center py-4'>
+          <div class='w-full lg:w-1/2 flex flex-col justify-center mb-10 lg:mb-0'>
+            <div class="lg:w-5/6">
+              <h3 class='text-blue-1000 font-sans text-4xl font-extrabold text-white'>Encuentra las mejores promociones</h3>
+              <p class='font-sans boldfont-semi leading-normal text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 h-full">
+            <div class="h-full lg:h-screen flex items-center justify-center">
+              <img src='./resources/images/Group 91.png' />
+            </div>
+          </div>
         </div>
-        <img src='./resources/images/Group 65 copy.png' />
-      </div>
-    </section>
+      </section>
 
-    <section class='bg-gray-1000'>
-      <div class='py-2 mx-4 flex items-center justify-between'>
-        <div class='ml-6 justify-between'>
-          <h2 class='font-sans text-4xl font-extrabold text-gray-1100'>¡Aumenta tus ventas!</h2>
-          <p class='mt-8 w-128 font-sans boldfont-semi leading-relaxed'>Sé parte de nuestros socios estratégicos. Únete a TapApp para llegar a más clientes y aumentar tus ventas.</p>
-          <button class='mt-8 rounded text-white bg-green-1100 py-2 px-16'>Leer mas</button>
+      <section class='h-auto py-20 overflow-hidden bg-blue-1000'>
+        <div class='container mx-auto flex flex-col lg:flex-row items-center py-4'>
+          <div class='w-full lg:w-1/2 flex flex-col justify-center mb-10 lg:mb-0'>
+            <div class="lg:w-5/6">
+              <h2 class='font-sans text-4xl font-extrabold text-white'>No vuelvas a perder tu cita</h2>
+              <p class='font-sans boldfont-semi leading-relaxed text-white'>La primera aplicacion movil que te permite generar reservas en restaurantes, doctores, estilo de vida y mas en un solo lugar</p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 h-full">
+            <div class="h-full lg:h-screen flex items-center justify-center">
+              <img src='./resources/images/Group 65 copy.png' />
+            </div>
+          </div>
         </div>
-        <img src='./resources/images/Rectangle.png' />
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <div class='flex flex-col items-center'>
-        <h1 class='mt-10 text-blue-1000 font-sans text-4xl font-black'>FAQ'S</h1>
-        <p class='mt-4 text-gray-1200'>Guia general del uso de la aplicacion y preguntas frecuentes</p>
-      </div>
-      <div class="w-full md:w-3/5 mx-auto p-8">
-        <div>
-           <div class="tab w-full overflow-hidden">
+      <section class='bg-gray-1000'>
+        <div class='flex flex-col lg:flex-row items-center lg:justify-between h-full'>
+          <div class='h-128 flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-3 lg:px-0 w-full lg:w-1/3 mx-auto order-2 lg:order-1'>
+            <h4 class='font-sans text-4xl font-extrabold text-gray-1100 mb-4'>¡Aumenta tus ventas!</h4>
+            <p class='mt-8 mb-8 font-sans boldfont-semi leading-relaxed'>Sé parte de nuestros socios estratégicos. Únete a TapApp para llegar a más clientes y aumentar tus ventas.</p>
+            <button class='mt-8 rounded text-white bg-green-1100 py-2 px-16'>Leer mas</button>
+          </div>
+          <div class="order-1 lg:order-2">
+            <img src='./resources/images/Rectangle.png' class="h-auto lg:h-128 w-128" />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class='flex flex-col items-center'>
+          <h1 class='mt-10 text-blue-1000 font-sans text-4xl font-black'>FAQ'S</h1>
+          <p class='mt-4 ml-5 text-gray-1200'>Guia general del uso de la aplicacion y preguntas frecuentes</p>
+        </div>
+        <div class="w-full md:w-3/5 mx-auto p-8">
+          <div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-one"><strong>¿Qué es Tap the App?</strong></label>
               <div class="tab-content overflow-hidden">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs">
               <label class="block p-5 cursor-pointer" for="tab-multi-two"><strong>Como usuario de la App, ¿puedo re agendar una cita a la que yo no podre asistir?</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-three"><strong>Como usuario de la app, ¿como me califican?</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-one"><strong>Como usuario de la app, ¿que tengo que pagar?</strong></label>
               <div class="tab-content overflow-hidden">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs">
               <label class="block p-5 cursor-pointer" for="tab-multi-two"><strong>¿Que pasa si como usuario de la app tengo una mala calificación?</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-three"><strong>Label One</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-one"><strong>Como establecimiento, ¿Cómo me califican?</strong></label>
               <div class="tab-content overflow-hidden">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs">
               <label class="block p-5 cursor-pointer" for="tab-multi-two"><strong>Como establecimiento, ¿puedo mejorar mi plan?</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>
-           <div class="tab w-full overflow-hidden">
+            </div>
+            <div class="tab w-full overflow-hidden">
               <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs">
               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-three"><strong>Como establecimiento, ¿a que reporteria tengo acceso?</strong></label>
               <div class="tab-content overflow-hidden border-l-2">
-                 <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
               </div>
-           </div>           
-        </div>
-     </div>  
-    </section>
-
-    <section class='bg-gray-1000'>
-        <div class='flex flex-col items-center h-screen'>
-          <h1 class='mt-10 font-sans text-4xl font-black'>Contáctanos</h1>
-          <div class='justify-around flex mt-16 bg-white h-391 w-1002'>
-            <div class='mt-32 flex-col'>
-              <div>
-                  <p class='font-sans leading-relaxed text-blue-1000'><strong>Nombre</strong></p>
-              <input class='h-10' placeholder='Cameron Rogers' type='text'/>
-              </div>
-              <div class='mt-6'>
-                  <p class='font-sans leading-relaxed text-blue-1000'><strong>Email</strong></p>
-              <input class='h-10' placeholder='sheila.regos@hotmail.com' type='text'/>
-              </div>  
-            </div>
-            <div class='mt-32 flex-col'>
-              <div>
-                  <p class='font-sans leading-relaxed text-blue-1000'><strong>Mensaje</strong></p>
-                <input class='h-10' placeholder='Escribe tu consulta...'type='text'/>
-              </div>
-              <div>
-                  <button class='mt-8 rounded text-white bg-blue-1000 py-2 px-16'>Enviar mensaje</button>
-              </div>    
             </div>
           </div>
         </div>
-    </section>
+      </section>
+
+      <section class='bg-gray-1000'>
+        <div class='bg-gray-200 py-16 flex flex-col items-center px-2'>
+          <div class="text-center container mb-6 flex flex-col items-center">
+            <h1 class='mt-10 font-sans text-4xl font-extrabold'>Contáctanos</h1>
+          </div>
+          <div class='justify-around flex mt-16 bg-white h-391 w-full lg:w-2/3'>
+            <div class='mt-32 flex-col'>
+              <div>
+                <p class='font-sans text-sm md:text-base leading-relaxed text-blue-1000'><strong>Nombre</strong></p>
+                <input class='h-10 text-sm md:text-base' placeholder='Cameron Rogers' type='text'/>
+              </div>
+              <div class='mt-6'>
+                <p class='font-sans text-sm md:text-base leading-relaxed text-blue-1000'><strong>Email</strong></p>
+                <input class='h-10 text-sm md:text-base' placeholder='sheila.regos@hotmail.com' type='text'/>
+              </div>
+            </div>
+            <div class='mt-32 flex-col'>
+              <div>
+                <p class='font-sans text-sm md:text-base leading-relaxed text-blue-1000'><strong>Mensaje</strong></p>
+                <input class='h-10 text-sm md:text-base' placeholder='Escribe tu consulta...'type='text'/>
+              </div>
+              <div>
+                <button class='text-sm md:text-base mt-12 rounded text-white bg-blue-1000 py-2 px-16'>Enviar mensaje</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="bg-black py-8">
+        <div class="container mx-auto">
+          <div class="flex justify-between mb-8 items-center">
+            <img src="./resources/Images/header + Group + ic/Group.png" alt="" class="">
+            <div>
+              <a href="https://www.facebook.com/TapAppSV/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                     class="fill-current text-white inline-block h-6 w-6 mx-3 hover:text-gray-400">
+                  <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col xl:flex-row justify-between text-center xl:text-left">
+            <p class="text-gray-600">© Tap. Todos los derechos reservados, 2019</p>
+            <div class="flex flex-col xl:flex-row items-center">
+              <a href="/terms" class="text-gray-600 hover:text-gray-500">Terminos y Condiciones</a>
+              <div class="hidden xl:inline border-l w-1 border-gray-500 h-5 mx-4"></div>
+              <a href="/privacy" class="text-gray-600 hover:text-gray-500">Políticas de Privacidad</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
+
   <script>
-      /* Optional Javascript to close the radio button version by clicking it again */
-      var myRadios = document.getElementsByName('tabs2');
-      var setCheck;
-      var x = 0;
-      for(x = 0; x < myRadios.length; x++){
-          myRadios[x].onclick = function(){
-              if(setCheck != this){
-                   setCheck = this;
-              }else{
-                  this.checked = false;
-                  setCheck = null;
-          }
-          };
-      }
-   </script>
+    /* Optional Javascript to close the radio button version by clicking it again */
+    var myRadios = document.getElementsByName('tabs2');
+    var setCheck;
+    var x = 0;
+    for(x = 0; x < myRadios.length; x++){
+      myRadios[x].onclick = function(){
+        if(setCheck != this){
+          setCheck = this;
+        }else{
+          this.checked = false;
+          setCheck = null;
+        }
+      };
+    }
+  </script>
 </html>
