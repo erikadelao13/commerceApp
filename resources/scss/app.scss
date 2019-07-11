@@ -3,3 +3,7 @@
 @import '~tailwindcss/utilities';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+.greenbluegradient {
+    background: linear-gradient(270deg, #8BDA5A -10.32%, #1435B9 100%);
+}
